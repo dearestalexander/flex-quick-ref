@@ -1,0 +1,585 @@
+:root {
+  --color__fill--bg: #f5f5f5;
+  --color__fill--one: #1335a9;
+  --color__fill--one-light: rgba(19, 53, 169, 0.1);
+  --color__fill--two: #a91335;
+  --color__fill--two-light: rgba(169, 19, 53, 0.1);
+  --color__fill--three: #35a913;
+  --color__fill--three-light: rgba(53, 169, 19, 0.1);
+  --color__fill--tags: black;
+  --color__fill--nav: black;
+  --color__text--light: lightgrey;
+  --font__base: "Noto Sans", serif;
+  --sizing__margin--start: 2vw;
+}
+
+/* color notes - extra colours to test
+Complementary
+- #a95313 (Rich Orange)
+Analogous
+- #1349a9 (Bright Royal Blue), #1321a9 (Dark Purple-Blue)
+Triadic
+- #1335a9 (blue), #a91335 (Vivid Red), #35a913 (Bright Green)
+Split complementary
+- #a91384 (Fuchsia Pink), #13a984 (Teal)
+Monochromatic
+- #1c47d1 (Vibrant Blue), #0f2780 (Navy Blue)
+Natural accents
+- #a9a013 (Golden Yellow), #a96f13 (Burnt Orange)
+Example pallet
+- Card 1	#1335a9	Deep Blue (Original)
+- Card 2	#a95313	Rich Orange
+- Card 3	#13a984	Teal
+- Card 4	#a91335	Vivid Red
+- Card 5	#1c47d1	Vibrant Blue
+*/
+
+
+
+/*====================
+-------- RESET -------
+====================== */
+
+body, * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/*=============================
+-------- GLOBAL STYLING -------
+=============================== */
+
+/* GLOBAL STYLING, MACRO LAYOUT & NAV */
+
+body {
+  background-color: --var(--color__fill--bg);
+  font-family: --var(--font__base);
+}
+
+p, li, label, h2 {
+  font-size: 0.875rem;
+}
+
+.layout {
+  max-width: 95%;
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  margin-inline-start: var(--sizing__margin--start);
+  padding: 1rem 0;
+}
+
+.heading h1 {
+  font-size: 1.5rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style-type: none;
+}
+
+nav a {
+  display: inline-block;
+  background-color: var(--color__fill--nav);
+  border: 1px solid var(--color__fill--nav);
+  color:var(--color__text--light);
+  text-decoration: none;
+  padding: 0.5em;
+}
+
+nav a:hover {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+}
+
+/*=======================
+-------- SECTIONS -------
+========================= */
+
+.section-info {
+  color: black;
+  margin-left: 2vw;
+}
+
+.section-info h1 {
+  font-size: 1.2rem;
+}
+
+.section-info ul {
+  margin-inline-start: 1em;
+}
+
+.section-cards {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 2%;
+  margin-inline-start: var(--sizing__margin--start);
+}
+
+/*====================
+-------- CARDS -------
+=================== */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: min(95vw, 340px);
+  margin: 2rem 0;
+  background-color: #1651A9;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  border-radius: 0.9rem;
+/*  min-height: 450px; */
+}
+
+.card ul {
+  margin-inline-start: 1em;
+}
+
+.card p {
+  padding: 0.2rem;
+  margin: 0.1rem;
+  color: black;
+}
+
+.card li {
+  padding: 0.2rem;
+  margin: 0.1rem;
+  color: darkgrey;
+}
+
+.card__title {
+  width: 100%;
+  background: white;
+  border-top-left-radius: 0.9rem;
+  border-top-right-radius: 0.9rem;
+}
+
+.card__title__heading {
+  display: inline-block;
+  background-color: #1651A9;
+  border-top-left-radius: 0.9rem;
+  border-bottom-right-radius: 0.9rem;
+  margin-bottom: 1em;
+}
+
+.card__title__heading h2 {
+  color: white;
+  padding: 0.5em 1em;
+  margin: 0;
+}
+
+.range__container {
+  display: flex;
+  margin: auto;
+  width: 80%;
+  accent-color: lightgrey;
+}
+
+.range__container > div {
+  display: flex;
+  gap: 1rem;
+}
+
+.card__title__notes {
+  padding: 0.5em 1em;
+}
+
+.card__demo-area {
+  padding: 2rem 1rem;
+}
+
+.card__detail {
+  background-color: white;
+  border-bottom-left-radius: 0.9rem;
+  border-bottom-right-radius: 0.9rem;
+  padding: 1em 1em;
+}
+
+.card__detail p,
+.card__detail li {
+  padding: 0;
+  margin: 0;
+}
+
+.card__detail__container li, .card__detail__item li {
+  display:inline-block;
+  list-style-type: none;
+  background-color: lightgrey;
+  color: black;
+  padding: 0.2rem 0.3rem;
+  margin-top: 0.2rem;
+}
+
+/* Alternate color cards */
+
+.section-1 .item,
+.section-4 .item
+{
+  background-color: var(--color__fill--one-light);
+  border: 1px solid var(--color__fill--one);
+}
+
+.section-2 .card__title__heading,
+.section-2 .card,
+.section-5 .card__title__heading,
+.section-5 .card
+{
+  background-color: var(--color__fill--two);
+}
+
+.section-2 .item,
+.section-5 .item
+{
+  background-color: var(--color__fill--two-light);
+  border: 1px solid var(--color__fill--two);
+}
+
+.section-3 .card__title__heading,
+.section-3 .card,
+.section-6 .card__title__heading,
+.section-6 .card
+{
+  background-color: var(--color__fill--three);
+}
+
+.section-3 .item,
+.section-6 .item
+{
+  background-color: var(--color__fill--three-light);
+  border: 1px solid var(--color__fill--three);
+}
+
+/*=====================================
+-------- FLEX DEMO INSIDE CARDS -------
+======================================= */
+
+.container {
+  padding: 0.5em;
+  gap: 0.2rem;
+  background-color: white;
+}
+
+.item {
+  min-width: 5ch;
+  min-height: 2rem;
+  padding: 0.1rem;
+}
+
+.item p {
+  font-size: 0.875rem;
+}
+
+.i3 p {
+  font-size: 0.8rem;
+}
+
+.item-attr {
+  font-weight: bold;
+}
+
+/* example 1-1 */
+
+/* example 1-2 */
+.c1-2 {
+  display: flex;
+}
+
+/* example 1-3 */
+.c1-3 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* example 1-4 */
+.c1-4 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+/* example 1-5 */
+.c1-5 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items:flex-start;
+}
+
+/* example 1-6 */
+.c1-6 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+/* example 2-1 */
+.c2-1 {
+  display: flex;
+}
+.c2-1i1 {
+  flex-grow: 3
+}
+.c2-1i2, .c2-1i3, .c2-1i4 {
+  flex-grow: 1;
+}
+
+/* example 2-2 */
+.c2-2 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.c2-2i1 {
+  flex-grow: 3
+}
+.c2-2i2, .c2-2i3, .c2-2i4 {
+  flex-grow: 1;
+}
+
+/* example 2-3 */
+.c2-3 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap:wrap;
+}
+
+.c2-3i1 {
+  flex-grow: 3
+}
+.c2-3i2, .c2-3i3, .c2-3i4 {
+  flex-grow: 1;
+}
+
+/* example 3-1 */
+.c3-1 {
+  display: flex;
+}
+
+.c3-1i1,
+.c3-1i2,
+.c3-1i4 {
+  flex-shrink: 0;
+  width: 75px;
+}
+
+.c3-1i3 {
+  width: 75px;
+  flex-shrink: 1;
+}
+/*
+
+/* example 3-2 */
+.c3-2 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.c3-2i1,
+.c3-2i2,
+.c3-2i4 {
+  flex-shrink: 0;
+  width: 75px;
+}
+
+.c3-2i3 {
+  width: 75px;
+  flex-shrink: 1;
+}
+
+/* example 3-3 */
+.c3-3 {
+  display: flex;
+  flex-direction: column;
+}
+
+.c3-3i1,
+.c3-3i2,
+.c3-3i4 {
+  flex-shrink: 0;
+  height: 80px;
+}
+
+.c3-3i3 {
+  flex-shrink: 1;
+  height: 80px;
+}
+
+/* example 3-4 */
+.c3-4 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.c3-4i1,
+.c3-4i2,
+.c3-4i4 {
+  flex-shrink: 0;
+  height: 80px;
+}
+
+.c3-4i3 {
+  flex-shrink: 1;
+  height: 80px;
+}
+
+
+
+/* example 4 */
+.c4-1i1, .c4-2i1, .c4-3i1, .c4-4i1, .c4-5i1, .c4-6i6 {
+/*  min-width: 20px;*/
+}
+
+/* example 4-1 */
+.c4-1 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* example 4-2 */
+.c4-2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+}
+
+/* example 4-3 */
+.c4-3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:flex-end;
+}
+
+/* example 4-4 */
+.c4-4 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+}
+
+.c4-4i1, .c4-4i4 {
+  display: none;
+}
+
+/* example 4-5 */
+.c4-5 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
+}
+
+.c4-5i1, .c4-5i4 {
+  display: none;
+}
+
+/* example 4-6 */
+.c4-6 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-evenly;
+}
+
+.c4-6i1, .c4-6i4 {
+  display: none;
+}
+
+
+/* section 5 */
+.item .item__large-text {
+  font-size: 1.5rem;
+}
+
+
+/* example 5-1 */
+.c5-1 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items:flex-start
+}
+
+.c5-2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items:baseline
+}
+
+/* example 5-2 */
+.c5-3 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items:center
+}
+
+/* example 5-4 */
+.c5-4 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items:flex-end;
+}
+
+/* example 5-5 */
+.c5-5 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items:last baseline;
+}
+
+/* example 5-6 */
+.c5-6 {
+  display: flex;
+  flex-direction:column;
+  flex-wrap: wrap;
+  align-items:flex-start
+
+}
+
+
+
+/* Example 6-1 */
+.c6-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.c6-1i1 {
+  width: 100px;
+  height: 100px;
+}
+
+
+/* Example 6-2 */
+.c6-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.c6-2i1 {
+  margin:auto;
+}
+
+.c6-2i2 {
+  margin-top: auto;
+}
+
+
+
+
+
+
+
+
